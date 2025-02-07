@@ -12,7 +12,7 @@ import argparse
 
 def sendmail(to_user, subject, content):
     to_list = " ,".join(to_user)
-    mail_host = "email-smtp.us-east-2.amazonaws.com"
+    mail_host = environ.get("MAIL_HOST")
     mail_port = 465
     mail_user = environ.get("MAIL_USER")
     mail_pass = environ.get("MAIL_PASS")
